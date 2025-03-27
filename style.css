@@ -1,0 +1,199 @@
+
+:root {
+    --primary-color: #00f0ff;
+    --secondary-color: #000000;
+    --accent-color: #5cebdf;
+    --text-color: #fff;
+}
+
+/* Reset and base styles */
+:root {
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+/* Optimize for print */
+@media print {
+    .ad-grid {
+        display: none;
+    }
+}
+
+body {
+    background: linear-gradient(135deg, var(--secondary-color), #000094, var(--secondary-color));
+    background-size: 400% 400%;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    perspective: 1000px;
+    line-height: 1.6;
+    padding: 20px 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.container {
+    background-color: rgba(10, 25, 47, 0.9);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
+    border: 2px solid var(--primary-color);
+    position: relative;
+    margin: 20px auto;
+    transform-style: preserve-3d;
+    transform: rotateX(10deg);
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(92, 235, 223, 0.2));
+    z-index: -1;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#video-url {
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--primary-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#video-url::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#video-url:focus {
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.options-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+select {
+    flex: 1;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--primary-color);
+    color: #000;
+    border-radius: 10px;
+    appearance: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#download-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#download-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+.ad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.ad-space {
+    text-align: center;
+    opacity: 0.8;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.ad-space:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+}
+
+.ad-placeholder {
+    background: linear-gradient(45deg, #ff0000, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.ad-sponsor {
+    background: linear-gradient(45deg, #ff4444, #ff8080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+        transform: none;
+    }
+}
